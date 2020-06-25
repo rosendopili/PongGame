@@ -83,7 +83,7 @@ function moveEverything(){
       ballY += ballSpeedY;
 
       //making the ball bounce off the paddle
-      if(ballX < 0) {
+      if(ballX < 0 + 20) {
         if(ballY > paddle1Y &&
            ballY < paddle1Y + PADDLE_HEIGHT) {
              ballSpeedX = -ballSpeedX;
@@ -98,7 +98,7 @@ function moveEverything(){
            }
       }
 
-      if(ballX > canvas.width) {
+      if(ballX > canvas.width - 20) {
         if(ballY > paddle2Y &&
            ballY < paddle2Y + PADDLE_HEIGHT) {
              ballSpeedX = -ballSpeedX;
@@ -162,7 +162,7 @@ function drawEverything() {
       colorRect(canvas.width - PADDLE_WIDTH, paddle2Y,
                 PADDLE_WIDTH, PADDLE_HEIGHT, 'white');
     //next line draws the ball
-      colorCircle(ballX, ballY, 10, 'white');
+      colorCircle(ballX, ballY, 10, 'red');
 
       canvasContext.fillText(player1Score, 100, 100);
       canvasContext.fillText(player2Score, canvas.width -100, 100);
